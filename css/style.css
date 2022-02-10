@@ -61,27 +61,28 @@
 
 @media screen and (min-width: 768px) {
   .cards-section {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1r 1fr;
     gap: 15px;
   }
-
   .section-title-block {
-    /* grow shrink flex basis */
-    /* flex: 1 0 100%; */
-    flex-basis: 100%;
-    flex-grow: 1;
+    grid-column: 1 / span 2;
   }
 
   .one-card {
-    flex-basis: 48%;
-    flex-grow: 1;
   }
 }
 
 @media screen and (min-width: 1000px) {
+  .cards-section {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .section-title-block {
+    grid-column: 1 / span 4;
+  }
+
   .one-card {
-    flex-basis: 20%;
     border-right: 1px solid rgb(147, 141, 141);
     padding-right: 15px;
   }
